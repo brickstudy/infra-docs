@@ -1,2 +1,10 @@
+.venv
+__pycache__
+
 # spark
 .ipynb_checkpoints
+
+# airflow
+config
+logs
+plugins
