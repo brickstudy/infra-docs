@@ -27,6 +27,7 @@ with DAG('postgres_loader',
         sql=sql_query,
         dag=dag)
 
+    # Sensor
     sql_sensor = SqlSensor(
         task_id='wait_for_condition',
         conn_id='my_postgres_connection',
