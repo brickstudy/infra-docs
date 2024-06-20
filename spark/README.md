@@ -9,7 +9,13 @@
 git clone https://github.com/brickstudy/infra-docs.git
 ```
 
-2. Run docker-compose
+2. AWS configuration
+spark, aws 인프라 간 연결을 위한 자격증명을 구성해야합니다.<br>
+해당 구성 관련 파일은 1. spark/aws/credentials 2. spark/conf/spark-defaults.conf 파일입니다.<br>
+해당 파일의 기본 템플릿이 .template posfix로 생성되어있습니다. 이를 복사하여 access key, secure key를 명시해줍니다.
+
+
+3. Run docker-compose
 
 - spark 경로 접속!!
 
@@ -18,20 +24,16 @@ cd ./infra-docs/spark
 ```
 
 
-- 경로에 docker-compsoe 파일 확인
+- 경로에 docker-compose.yaml 파일 확인
 - 해당 경로에서 아래 실행
 
 ```sh
 docker-compose up -d
 ```
-
-- docker 배포가 완료 된후 `localhost:8888` 경로 접속
-    - (주의!!) jupyterlab에서 작업 work 폴더 내에서 작업해야 본인 로컬 컴퓨터에도 해당 파일이 저장됩니다!!
-- spakr cluster 실행은 `localhost:8080` 경로에서 확인
+- docker container instance 실행된 후 `localhost:8888` 인터페이스로 jupyter notebook 작업 가능
 
 ### 참고사항
 
-- 해당 spark docker 실행의 경우 별도의 설정없이 기본으로 구성되어 있어 특정 작업 시 오류가 발생할 수 있습니다.
 - 오류가 발생할 경우 github 이슈에서 `Bug Template`을 활용하여 이슈를 공유해주시고 해결 진행해주시면 됩니다.
 
 
